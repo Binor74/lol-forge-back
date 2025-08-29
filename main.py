@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from controller.champions import router as champions_router
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
@@ -12,6 +13,9 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
+
+# Include champions router
+app.include_router(champions_router)
 
 @app.get("/")
 async def root():
