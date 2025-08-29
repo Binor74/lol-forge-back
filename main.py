@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from controller.champions import router as champions_router
+from champions.champions_controller import router as champions_router
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
